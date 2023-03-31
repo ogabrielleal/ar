@@ -1,0 +1,71 @@
+"Questao02 - Python"
+  
+ num = int(input("Digite um número inteiro: "))
+
+fibonacci = [0, 1]
+while fibonacci[-1] < num:
+    fibonacci.append(fibonacci[-1] + fibonacci[-2])
+
+if fibonacci[-1] == num:
+    print(f"O número {num} pertence à sequência de Fibonacci!")
+else:
+    print(f"O número {num} não pertence à sequência de Fibonacci.")
+
+_______________________________________________________________________________________________________________________________________________________________
+"Questao03 - Python"
+
+# Exemplo de vetor com valores de faturamento diário
+faturamento_diario = [1000, 800, 1200, 500, 900, 1100, 1500, 700, 1000, 1300, 950, 600, 800, 1100, 1200, 1400, 900, 1000, 1100, 1300, 1200, 800, 900, 1000, 1100, 1200, 1300, 1400, 1100]
+
+# Calcula o menor valor de faturamento diário
+menor_faturamento = min(faturamento_diario)
+
+# Calcula o maior valor de faturamento diário
+maior_faturamento = max(faturamento_diario)
+
+# Calcula a média mensal de faturamento diário
+media_mensal = sum(faturamento_diario) / len(faturamento_diario)
+
+# Calcula o número de dias em que o faturamento diário foi superior à média mensal
+dias_acima_da_media = sum([1 for faturamento in faturamento_diario if faturamento > media_mensal])
+
+# Imprime os resultados
+print(f"Menor faturamento diário: {menor_faturamento}")
+print(f"Maior faturamento diário: {maior_faturamento}")
+print(f"Número de dias com faturamento diário acima da média: {dias_acima_da_media}")
+
+_______________________________________________________________________________________________________________________________________________________________
+"Questao04 - Python"
+
+faturamento = {
+    'SP': 67836.43,
+    'RJ': 36678.66,
+    'MG': 29229.88,
+    'ES': 27165.48,
+    'Outros': 19849.53
+}
+
+# Calcula o valor total mensal da distribuidora
+total = sum(faturamento.values())
+
+# Calcula o percentual de representação de cada estado no valor total mensal
+percentuais = {estado: (valor / total) * 100 for estado, valor in faturamento.items()}
+
+# Imprime os resultados
+for estado, percentual in percentuais.items():
+    print(f"{estado}: {percentual:.2f}%")
+
+_______________________________________________________________________________________________________________________________________________________________
+
+"Questao05 - Python"
+
+# Lê a string informada pelo usuário
+string = input("Informe uma string: ")
+
+# Inverte a string
+string_invertida = ""
+for i in range(len(string)-1, -1, -1):
+    string_invertida += string[i]
+
+# Imprime a string invertida
+print("A string invertida é:", string_invertida)
